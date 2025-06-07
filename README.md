@@ -1,9 +1,31 @@
 # Subscription Management System
 
 ## Overview
+
 This project is a backend subscription management system built with Node.js and Express. It provides user authentication, subscription tracking, and automated renewal reminder workflows. The system integrates with MongoDB for data storage and uses Upstash Workflow for scheduling and sending subscription renewal reminder emails.
 
+## Project Structure
+
+- `config/` - Configuration files for environment variables, nodemailer, Upstash, etc.
+- `controllers/` - Express route handlers for authentication, users, subscriptions, and workflows
+- `database/` - MongoDB connection setup
+- `middlewares/` - Express middlewares for authentication, error handling, and custom Arcjet middleware
+- `models/` - Mongoose models for User and Subscription
+- `routes/` - Express route definitions for different API endpoints
+- `utils/` - Utility functions including email templates and email sending logic
+- `server.js` - Main application entry point
+
+## Architecture
+
+- RESTful API backend using Express.js
+- MongoDB database accessed via Mongoose ODM
+- Authentication using JWT and bcrypt for password hashing
+- Workflow orchestration and scheduling using Upstash Workflow
+- Email notifications sent via Nodemailer
+- Environment configuration managed with dotenv
+
 ## Features
+
 - User authentication and authorization
 - Subscription creation and retrieval per user
 - Automated subscription renewal reminders sent via email
@@ -14,6 +36,7 @@ This project is a backend subscription management system built with Node.js and 
 - Environment configuration with dotenv
 
 ## Technology Stack
+
 - Node.js (ES Modules)
 - Express.js
 - MongoDB with Mongoose
@@ -27,17 +50,18 @@ This project is a backend subscription management system built with Node.js and 
 ## Installation
 
 1. Clone the repository:
+
    ```bash
    git clone <repository-url>
    cd subscription-management-system
    ```
-
 2. Install dependencies:
+
    ```bash
    npm install
    ```
-
 3. Create a `.env` file in the root directory and configure the following environment variables:
+
    ```
    PORT=your_port_number
    MONGODB_URI=your_mongodb_connection_string
@@ -52,6 +76,7 @@ This project is a backend subscription management system built with Node.js and 
 ## Running the Application
 
 Start the development server with nodemon:
+
 ```bash
 npm run dev
 ```
